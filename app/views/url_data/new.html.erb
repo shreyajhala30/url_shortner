@@ -1,0 +1,13 @@
+<%= form_with model: @url, local: true do |f| %>
+  <div class="input-group col-md-12">
+    <%= f.text_field :source_url, class: 'form-input col-md-10', placeholder: 'Enter URL', required: true %>
+    <%= f.submit 'Get Shortned', class: 'btn btn-primary col-md-2' %>
+  </div>
+<% end %>
+<% if params[:token].present? %><br>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <center><h1><%= link_to "#{root_url}#{params[:token]}", "#{root_url}#{params[:token]}", target: '_blank' %></h1></center>
+    </div>
+  </div>
+<% end %>
